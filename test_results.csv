@@ -1,0 +1,78 @@
+request_id,request_date,cash_balance,inventory_value,response
+1,2025-04-01,45059.7,4940.299999999999,"The quotes for your paper supplies are as follows:
+
+1. **A4 glossy paper**: $40.00 for 200 sheets (on backorder, no stock available).
+2. **Heavy cardstock (white)**: Quote pending.
+3. **Colored paper (assorted colors)**: $10.00 for 100 sheets (on backorder, no stock available).
+
+Unfortunately, both the A4 glossy paper and the colored paper are on backorder. I recommend confirming the order for heavy cardstock first, then decide on the backordered items alternatives or wait times."
+2,2025-04-03,44919.7,4940.299999999999,The order cannot be fulfilled as both the Party Streamers and Poster Paper are out of stock. Please consider alternative arrangements or wait for restocking.
+3,2025-04-04,44914.7,4945.299999999999,"The order for 10,000 sheets of A4 paper, 5,000 sheets of A3 paper, and 500 reams of printer paper cannot be fulfilled due to insufficient stock and funding issues. A4 paper has 9,728 units on backorder, A3 paper is completely out of stock with 5,000 units also on backorder, and printer paper is unavailable. Please consider adjusting your order or providing additional funds for a successful reorder."
+4,2025-04-05,44914.7,4945.299999999999,"Unfortunately, we currently have no stock available for 500 sheets of high-quality, recycled cardstock in various colors and 250 sheets of A4 size printer paper. Therefore, we cannot fulfill your order request for these items at this time."
+5,2025-04-05,44834.7,4945.299999999999,"Unfortunately, I couldn't fulfill the order for the following items due to unavailability:
+1. 500 sheets of 8.5""x11"" colored paper
+2. 300 sheets of cardstock in various colors
+3. 200 rolls of decorative washi tape
+
+We have reordered 200 units of decorative adhesive tape (washi tape) with an estimated delivery on April 9, 2025. Please check back later or consider choosing alternative products for your upcoming party supplies."
+6,2025-04-06,44769.7,4975.3,"We are currently unable to fulfill your order as all requested items (colorful construction paper, white printer paper, and cardstock) are out of stock. We recommend checking back later or considering alternative suppliers."
+7,2025-04-07,44744.7,5000.3,"The following orders were attempted based on your request:
+1. **500 sheets of glossy A4 paper** - Order confirmed, estimated delivery by **April 11, 2025**. However, there are currently 0 units in stock, and this order is dependent on delivery.
+2. **1000 sheets of matte A3 paper** - Order cannot be fulfilled due to insufficient stock and cash balance.
+3. **200 sheets of heavyweight cardstock** - Order cannot be fulfilled due to insufficient stock, as there are 0 units currently in stock.
+
+Due to stock and financial limitations, your total order cannot be entirely fulfilled at this time. Please provide further instructions or adjustments to your order."
+8,2025-04-07,44024.7,5300.3,"The order for 500 sheets of Glossy paper at $0.1900 each has been successfully finalized, with delivery expected by April 15, 2025. The other items requested are currently out of stock and pending availability."
+9,2025-04-07,44024.7,5300.3,"The order placed includes the following items:
+
+1. **200 sheets of A4 white printer paper** - Awaiting confirmation on price and availability.
+2. **100 sheets of A3 glossy paper** - 100 sheets are on backorder, expected delivery by April 12, 2025, at a total cost of $20.00.
+3. **50 packets of 100% recycled kraft paper envelopes** - Unable to fulfill due to insufficient stock (0 units available), and expected delivery for backorder is April 11, 2025."
+13,2025-04-08,43999.7,5325.3,"The order for 500 sheets of A4 printing paper cannot be fulfilled as there are 0 units available and no stock to reorder. Additionally, the cardstock is also not available in the product catalog, making it impossible to complete the order."
+12,2025-04-08,43997.7,5325.3,"The order for 500 sheets of standard printer paper at $23.75 and 100 paper napkins for $2.00 has been placed. However, the order for 200 sheets of colorful cardstock cannot be fulfilled due to insufficient stock. Please look for alternative options for the cardstock or let us know how you would like to proceed."
+10,2025-04-08,43997.7,5325.3,"Order has been successfully placed for 500 sheets of high-quality glossy paper and 300 sheets of sturdy cardstock with a total cost of $140.00. Delivery is scheduled before April 15, 2025."
+11,2025-04-08,43997.7,5325.3,"The quote for your order is as follows:
+- 500 sheets of A3 glossy paper: Currently out of stock, no historical quotes available.
+- 300 sheets of A4 matte paper: Quoted at a total of $15.00, with availability confirmed as 1372 units in stock.
+
+Please note that we cannot proceed with the order for A3 glossy paper due to lack of availability. Would you like to proceed with the order for A4 matte paper only?"
+14,2025-04-09,42267.89,7181.7,"Order confirmed for A4 paper (1,372 sheets) and Cardstock (500 sheets) on 2025-04-09. 
+
+For the 2,000 sheets of poster paper that are currently out of stock, here are the alternatives:
+1. Large Poster Paper (24x36 inches) - 2,699 units currently in stock at $1.00/unit.
+2. Poster Paper - 500 units currently in stock at $0.25/unit (note: you will need 1,500 more sheets to fulfill the demand).
+
+Please let me know how you would like to proceed with the poster paper alternatives."
+15,2025-04-12,43046.69,8382.9,"The orders have been processed as follows: 
+1. **10,000 sheets of A4 white paper**: Order placed successfully for a total of $500, delivery expected by April 19, 2025.
+2. **5,000 sheets of A3 colored paper**: Order could not be fulfilled due to insufficient stock (0 units available).
+3. **500 reams of cardboard for signage**: Order cannot be finalized due to lack of stock (0 units available)."
+16,2025-04-13,43046.69,8382.9,"Order Details:
+1. 200 sheets of colorful construction paper confirmed for $14.00, delivery by April 15, 2025.
+2. 100 sheets of poster paper confirmed for $25.00, delivery by April 15, 2025.
+3. A4 printer paper is not available for order and cannot be placed at this time."
+17,2025-04-14,43006.69,8402.9,"Unfortunately, your order cannot be fulfilled as there is no stock available for Paper Plates, Colored Paper, Paper Cups, and Paper Napkins. Please consider adjusting your order or selecting different items."
+18,2025-04-14,42986.69,8422.9,"The order for 500 sheets of high-quality white cardstock and 1000 sheets of standard printing paper could not be completed as these items are not available in the inventory. Instead, I recommend considering alternatives: for high-quality white cardstock, you can use either Matte paper at $0.1800/unit or Glossy paper at $0.2000/unit. For standard printing paper, options include Recycled paper at $0.0800/unit or Eco-friendly paper at $0.1200/unit. Please let me know if you would like to proceed with these alternatives or explore other options."
+19,2025-04-15,46352.090000000004,8225.5,"Dear [Customer],
+
+Thank you for your inquiry and order request for your upcoming exhibition.
+
+Unfortunately, we encountered issues while attempting to fulfill your order:
+- **Cardstock in assorted colors**: Currently, we have only 295 units available, so this item will be on backorder with no additional stock expected in the near future.
+
+For the **A4 glossy paper** and **A3 matte paper**, we have confirmed a reorder for 150 units each. However, the estimated delivery date for these items is **April 24, 2025**, which is after your required date of April 20, 2025.
+
+We are unable to complete your order as requested but can assist you further with alternatives or additional inquiries. Please let us know how you'd like to proceed.
+
+Thank you for your understanding.
+
+Best regards,
+[Your Name]
+[Your Position]"
+20,2025-04-17,44692.090000000004,8385.5,"We have checked the inventory for your order. Here are the details:
+
+1. **Flyers**: We can confirm the availability of **5,000 flyers** for a total of **$600.00**, with delivery by **May 15, 2025**.
+2. **Posters**: Unfortunately, **posters** are currently not found in our catalog.
+3. **Tickets**: We cannot locate **tickets** in the catalog as well.
+
+For the **flyers**, would you like to proceed with the order for **$600.00**? Please let me know how you wish to proceed regarding the posters and tickets."
