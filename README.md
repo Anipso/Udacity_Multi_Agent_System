@@ -165,20 +165,6 @@ This mirrors the behaviour seen in historical quotes (e.g., a 10-ream order roun
 
 ---
 
-### Financial Summary (Populate After Run)
-
-| Metric | Value |
-|---|---|
-| Starting cash balance | $50,000.00 |
-| Final cash balance | *(run system)* |
-| Net change | *(run system)* |
-| Starting inventory value | *(run system)* |
-| Final inventory value | *(run system)* |
-| Reorder transactions triggered | *(run system)* |
-| Sales transactions recorded | *(run system)* |
-
----
-
 ### Strengths
 
 **1. Robust handling of standard paper supply requests.**
