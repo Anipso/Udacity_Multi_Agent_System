@@ -991,9 +991,18 @@ class QuoteAgent(ToolCallingAgent):
                 "(1) use list_catalog_items to map natural language item names to exact catalog names, "
                 "(2) use get_quote_history_tool with item names + event type + job type as keywords "
                 "to find comparable historical quotes from quote_requests.csv / quotes.csv, "
-                "(3) use generate_customer_quote for each item to apply bulk-discount tiers, "
+                "(3) use generate_customer_quote for EVERY requested item — never skip an item, "
                 "(4) check availability with check_paper_inventory. "
-                "Summarise all item quotes into a single response."
+                "Output rules: "
+                "Every item must receive a definitive response — either a quoted price or a clear "
+                "out-of-stock / not-in-catalog notice. 'Quote pending' is not acceptable. "
+                "For each item show: item name, quantity, standard unit price, discount tier and "
+                "percentage applied (e.g. 'wholesale — 10% off'), discounted unit price, and line "
+                "total. Finish with a grand total. "
+                "If an item is not in our catalog, state that explicitly and suggest the closest "
+                "available alternative by name. "
+                "Do not include placeholder text such as [Customer], [Your Name], [Your Position], "
+                "or any other unfilled template tokens in the response."
             ),
         )
 
@@ -1091,7 +1100,20 @@ class Orchestrator(ToolCallingAgent):
             - Multi-step requests (e.g., "get a quote and place the order")
               → call both handle_quote_request then handle_sales_request in sequence.
 
-            Always respond professionally and include all relevant details.
+            STRICT OUTPUT RULES — apply to every response before returning it:
+            1. No template tokens: never include [Customer], [Your Name], [Your Position],
+               [Manufacturer's Name], or any other unfilled placeholder in the final response.
+               If the sub-agent returns such tokens, replace them with appropriate text or remove them.
+            2. No internal financials: if an order cannot be fulfilled due to insufficient stock,
+               say only that the item is currently unavailable or out of stock and offer alternatives
+               or a reorder timeline. Never mention cash balance, funding constraints, or internal
+               cost figures as reasons for declining a customer order.
+            3. Every item gets a definitive answer: for each line item in the request, the response
+               must include either a quoted price with breakdown or a clear explanation of why it
+               cannot be quoted (not in catalog, out of stock). Never leave an item as 'pending'
+               without stating what information is missing and when the customer can expect follow-up.
+            4. Discount rationale required: whenever a discount is applied, state the tier name,
+               the percentage, and the resulting unit price so the customer understands the pricing.
             """,
         )
 
@@ -1129,19 +1151,26 @@ class Orchestrator(ToolCallingAgent):
 
 Routing instructions:
 1. Stock / inventory queries or reorder decisions → handle_inventory_request
-2. Price quotes (most requests from quote_requests_sample.csv fall here):
+2. Price quotes (most requests fall here):
    → handle_quote_request
    Pass event_type="{event_type}", order_size="{order_size}", job_type="{job_type}"
-   as keywords alongside item names when calling get_quote_history_tool inside the
-   quote agent so it finds the most relevant rows from the historical quotes DB.
+   as keywords alongside item names when calling get_quote_history_tool so it finds
+   the most relevant rows from the historical quotes DB.
 3. Confirmed purchase / order finalisation → handle_sales_request
 4. Multi-step (quote then buy): call handle_quote_request then handle_sales_request.
 
-Note: many requests list multiple items — the quote agent should quote each item
-individually using generate_customer_quote, then summarise into one total.
-Items not in stock should be flagged; the inventory agent can check reorder needs.
-
-Provide a professional, complete response.
+Before returning the final response, apply ALL of the following checks:
+- Remove any unfilled template tokens ([Customer], [Your Name], [Your Position],
+  [Manufacturer's Name], etc.). Replace generic salutations with "Dear valued customer"
+  and sign off as "Beaver's Choice Paper Company".
+- Do NOT mention cash balance, funding issues, or internal financial constraints as
+  reasons for declining or modifying an order. If stock is unavailable, say the item
+  is currently out of stock and provide an estimated restock date via check_delivery_timeline.
+- Every item in the request must have a definitive quoted price OR a clear explanation
+  (not in catalog → name the closest alternative; out of stock → give reorder timeline).
+  Never leave any item with a vague status like "Quote pending" alone.
+- Whenever a discount is applied, include the tier name, percentage, standard unit
+  price, and discounted unit price so the customer can see exactly how the total was reached.
 """
         )
 
