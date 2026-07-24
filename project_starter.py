@@ -1,3 +1,4 @@
+import re
 import pandas as pd
 import numpy as np
 import os
@@ -594,7 +595,7 @@ def search_quote_history(search_terms: List[str], limit: int = 5) -> List[Dict]:
 ########################
 
 
-dotenv.load_dotenv(dotenv_path="../.env")
+dotenv.load_dotenv()
 API_KEY = os.getenv("UDACITY_OPENAI_API_KEY")
 
 model = OpenAIServerModel(
@@ -946,6 +947,78 @@ def generate_global_report(as_of_date: str) -> str:
 
 
 # ========================
+# Response Post-Processing
+# ========================
+
+_MONTH_NAMES = (
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December",
+)
+_MONTH_PAT = "|".join(_MONTH_NAMES)
+
+
+def _sanitize_response(response: str, request_date: str) -> str:
+    """
+    Deterministic post-processing applied to every customer-facing response:
+
+    1. Replace any bracket-enclosed template tokens (e.g. [insert estimated restock date])
+       with a generic customer-safe fallback — LLM prompt guards alone are not reliable.
+
+    2. Replace delivery/restock dates that predate the request date with a recalculated
+       estimate (7-day lead time from request_date) so customers never receive a date in
+       the past.
+    """
+    # --- Issue 1: unfilled template tokens ---
+    response = re.sub(
+        r"\[[^\]]+\]",
+        "currently unavailable — please contact us for an update",
+        response,
+    )
+
+    # --- Issue 2: stale past-dated delivery/restock dates ---
+    try:
+        req_dt = datetime.strptime(request_date, "%Y-%m-%d")
+    except ValueError:
+        return response  # can't validate without a parseable request date
+
+    # Default fallback: 7-day lead time (>1 000-unit tier in get_supplier_delivery_date)
+    fallback_dt = req_dt + timedelta(days=7)
+    fallback_iso = fallback_dt.strftime("%Y-%m-%d")
+    fallback_written = (
+        fallback_dt.strftime("%B") + " " + str(fallback_dt.day) + ", " + str(fallback_dt.year)
+    )
+
+    def _fix_iso(m: re.Match) -> str:
+        try:
+            if datetime.strptime(m.group(), "%Y-%m-%d") < req_dt:
+                return fallback_iso
+        except ValueError:
+            pass
+        return m.group()
+
+    response = re.sub(r"\b\d{4}-\d{2}-\d{2}\b", _fix_iso, response)
+
+    def _fix_written(m: re.Match) -> str:
+        raw = m.group()
+        for fmt in ("%B %d, %Y", "%B %d %Y"):
+            try:
+                if datetime.strptime(raw, fmt) < req_dt:
+                    return fallback_written
+                return raw
+            except ValueError:
+                continue
+        return raw
+
+    response = re.sub(
+        rf"\b(?:{_MONTH_PAT})\s+\d{{1,2}},?\s+\d{{4}}\b",
+        _fix_written,
+        response,
+    )
+
+    return response
+
+
+# ========================
 # Agent Definitions
 # ========================
 
@@ -1123,6 +1196,7 @@ class Orchestrator(ToolCallingAgent):
         event_type: str = "",
         order_size: str = "",
         job_type: str = "",
+        request_date: str = "",
     ) -> str:
         """
         Process a customer or operator request through the multi-agent system.
@@ -1132,6 +1206,8 @@ class Orchestrator(ToolCallingAgent):
             event_type: Event context from quote_requests_sample.csv (e.g. 'ceremony').
             order_size: Order-size category from the sample data ('small'/'medium'/'large').
             job_type: Customer's job title (e.g. 'office manager', 'hotel manager').
+            request_date: ISO date string (YYYY-MM-DD) used to validate delivery dates
+                          and anchor fallback estimates. Defaults to today if omitted.
 
         Returns:
             Final response after coordinating the appropriate specialized agents.
@@ -1145,7 +1221,7 @@ class Orchestrator(ToolCallingAgent):
             context_parts.append(f"Order size: {order_size}")
         context_line = " | ".join(context_parts)
 
-        return self.run(
+        raw_response = self.run(
             f"""Customer request: "{customer_request}"
 {f'Context — {context_line}' if context_line else ''}
 
@@ -1173,6 +1249,10 @@ Before returning the final response, apply ALL of the following checks:
   price, and discounted unit price so the customer can see exactly how the total was reached.
 """
         )
+        # Deterministic post-processing: fix template tokens and stale dates that
+        # LLM prompt guards may have missed.
+        sanitize_date = request_date or datetime.now().strftime("%Y-%m-%d")
+        return _sanitize_response(raw_response, sanitize_date)
 
 
 # ========================
@@ -1221,6 +1301,7 @@ def run_test_scenarios():
                 event_type=str(row.get("event", "")),
                 order_size=str(row.get("need_size", "")),
                 job_type=str(row.get("job", "")),
+                request_date=request_date,
             )
         except Exception as e:
             response = f"Error processing request: {e}"

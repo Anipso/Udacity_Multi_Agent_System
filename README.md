@@ -30,7 +30,7 @@ The system follows a **hierarchical multi-agent** design: one orchestrator agent
 
 ### Workflow Diagram and Architectural Rationale
 
-The system's structure is depicted in the Mermaid workflow diagram (`architecutre_diagram_udacity.png`). The diagram shows the Orchestrator at the top, three specialist agents in a middle tier, the tools each agent owns, and the helper functions each tool calls. The sections below explain the design decisions visible in that diagram.
+The system's structure is depicted in the Mermaid workflow diagram (`workflow_diagram.md`). The diagram shows the Orchestrator at the top, three specialist agents in a middle tier, the tools each agent owns, and the helper functions each tool calls. The sections below explain the design decisions visible in that diagram.
 
 **Why a hierarchical orchestrator pattern rather than a single agent with all tools?**
 A flat design would give one agent 14+ tools, a combined system prompt covering quoting, stocking, and selling simultaneously, and no clean separation between read-only queries and write transactions. The orchestrator pattern solves all three problems: each specialist is limited to five tools (the smolagents recommended ceiling), each has a focused system prompt, and the Orchestrator controls when a quote becomes a sale — the two operations cannot be accidentally conflated.
@@ -194,14 +194,14 @@ This mirrors the behaviour seen in historical quotes (e.g., a 10-ream order roun
 | Metric | Value |
 |---|---|
 | Initial cash seed (`init_database`) | $50,000.00 |
-| First recorded cash balance (post-request 1, Apr 1) | $45,002.70 |
-| Final cash balance (post-request 20, Apr 17) | $50,978.80 |
-| Net cash change over test run | +$5,976.10 |
-| First recorded inventory value (post-request 1) | $4,985.30 |
-| Final inventory value (post-request 20) | $5,176.70 |
-| Net inventory change | +$191.40 |
-| Cash-increase events (sales fulfilled) | 2 — requests 15 (+$395.00) and 19 (+$6,445.00) |
-| Cash-decrease events (stock reorders triggered) | 7 — requests 3, 4, 5, 9, 11, 16, 17 |
+| First recorded cash balance (post-request 1, Apr 1) | $45,059.70 |
+| Final cash balance (post-request 20, Apr 17) | $44,401.08 |
+| Net cash change over test run | −$658.62 |
+| First recorded inventory value (post-request 1) | $4,940.30 |
+| Final inventory value (post-request 20) | $5,166.70 |
+| Net inventory change | +$226.40 |
+| Cash-increase events (sales fulfilled) | 1 — request 19 (+$18.88) |
+| Cash-decrease events (stock reorders triggered) | 5 — requests 2, 3, 5, 9, 18 |
 
 ---
 
@@ -224,8 +224,12 @@ Request 9 (city hall, small, reception — Apr 7) asked for three items that wer
 
 This demonstrates the `check_delivery_timeline` tool surfacing actionable data the customer can use to plan their order.
 
-**3. Large orders generate significant cash inflows (Requests 15 and 19)**
-Two requests produced clear cash increases in `test_results.csv`. Request 15 (event manager, large, demonstration — Apr 12) raised the cash balance from $44,185.80 to $44,580.80 (+$395.00). Request 19 (city hall, medium, exhibition — Apr 15) produced the largest single-turn transaction: cash rose from $44,533.80 to $50,978.80 (+$6,445.00) while inventory fell from $5,736.70 to $5,176.70 (−$560.00 consumed). The multi-item quote for request 19 covered 2,000 A4 glossy, 1,500 A3 matte, and 1,000 cardstock sheets with correct per-line pricing and a grand total of $753.00 quoted before fulfillment.
+**3. Pricing breakdown and discount rationale are shown for large-volume requests (Request 15)**
+Request 15 (event manager, large, demonstration — Apr 12) demonstrates the full quote structure the system produces for bulk orders. For 10,000 sheets of A4 white paper and 5,000 sheets of A3 colored paper, the response shows:
+- *"Standard unit price: $0.0500 / Discount: 20% / Final unit price: $0.0400 / Quote total: $400.00"*
+- *"Standard unit price: $0.1000 / Discount: 20% / Final unit price: $0.0800 / Quote total: $400.00"*
+
+Each item makes the discount tier, the percentage, the resulting unit price, and the line total explicit — the customer can verify the arithmetic without contacting the company. Request 3 (Apr 4) independently confirms the tiered logic: a 10,000-unit A4 order receives 20% off ("Quote Total: $400.00 (20% discount applied)") while a 500-unit printer paper order receives 5% off ("Quote Total: $23.75 (5% discount applied)").
 
 **4. Partial-fill responses clearly delineate available vs. backordered quantities (Request 12)**
 Request 12 (city hall, small, party — Apr 8) asked for items with mixed availability. The response breaks each line item into available and backordered quantities:
