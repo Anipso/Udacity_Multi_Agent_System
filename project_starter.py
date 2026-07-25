@@ -1073,31 +1073,13 @@ def _sanitize_response(response: str, request_date: str) -> str:
         flags=re.IGNORECASE,
     )
 
-    # --- Issue 4: internal financial constraint language ---
-    # "we do not have enough funds / insufficient funds / not enough funds"
-    for _funds_pat in (
-        r"[Ww]e\s+do\s+not\s+have\s+enough\s+funds?[^.]*\.",
-        r"[Ii]nsufficient\s+funds?[^.]*\.",
-        r"[Nn]ot\s+enough\s+funds?[^.]*\.",
-        r"[Bb]udget\s+unavailable[^.]*\.",
-        r"[Cc]annot\s+reorder\s+'?[^']+'?\s+at\s+this\s+time[^.]*\.",
-    ):
-        response = re.sub(
-            _funds_pat,
-            "This item is currently unavailable for reorder.",
-            response,
-            flags=re.IGNORECASE,
-        )
-
-    # --- Issue 5: internal inventory counts in narrative text ---
-    # "Current inventory is 100 units" / "inventory is X units"
+    # --- Issue 4 & 5: internal inventory counts in narrative text ---
     response = re.sub(
         r"\b[Cc]urrent\s+inventory\s+is\s+\d[\d,]*\s+units?[^.]*\.",
         "",
         response,
         flags=re.IGNORECASE,
     )
-    # "a reorder of X units has been placed" — strip the count, keep the fact
     response = re.sub(
         r"(\ba\s+reorder\s+of\s+)\d[\d,]*\s+units?",
         r"\1stock",
@@ -1105,6 +1087,29 @@ def _sanitize_response(response: str, request_date: str) -> str:
         flags=re.IGNORECASE,
     )
 
+    response = _sanitize_internal_business_language(response)
+    return response
+
+
+def _sanitize_internal_business_language(response: str) -> str:
+    sensitive_patterns = [
+        r'Due to budget constraints,?[^.]*\.',
+        r'Because of budget constraints,?[^.]*\.',
+        r'Funding constraints[^.]*\.',
+        r'Cash balance[^.]*\.',
+        r'Internal cost[^.]*\.',
+        r'[Ww]e\s+do\s+not\s+have\s+enough\s+funds?[^.]*\.',
+        r'[Ii]nsufficient\s+funds?[^.]*\.',
+        r'[Nn]ot\s+enough\s+funds?[^.]*\.',
+        r'[Bb]udget\s+unavailable[^.]*\.',
+        r'[Cc]annot\s+reorder\s+\'?[^\']+\'?\s+at\s+this\s+time[^.]*\.',
+    ]
+    replacement = (
+        'Some requested items are currently unavailable for backorder; '
+        'we can provide alternatives or a restock timeline upon request.'
+    )
+    for pattern in sensitive_patterns:
+        response = re.sub(pattern, replacement, response, flags=re.IGNORECASE)
     return response
 
 

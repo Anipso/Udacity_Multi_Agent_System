@@ -194,14 +194,14 @@ This mirrors the behaviour seen in historical quotes (e.g., a 10-ream order roun
 | Metric | Value |
 |---|---|
 | Initial cash seed (`init_database`) | $50,000.00 |
-| First recorded cash balance (post-request 1, Apr 1) | $45,037.70 |
-| Final cash balance (post-request 20, Apr 17) | $3,596,731.30 |
-| Net cash change over test run | +$3,551,693.60 |
-| First recorded inventory value (post-request 1) | $4,950.30 |
-| Final inventory value (post-request 20) | $7,361.70 |
-| Net inventory change | +$2,411.40 |
-| Cash-increase events (sales fulfilled) | 2 — request 15 (+$320,000.00) and request 19 (+$3,236,430.00) |
-| Cash-decrease events (stock reorders triggered) | 5 — requests 2, 3, 10, 14, 20 |
+| First recorded cash balance (post-request 1, Apr 1) | $45,009.70 |
+| Final cash balance (post-request 20, Apr 17) | $460,364.88 |
+| Net cash change over test run | +$415,355.18 |
+| First recorded inventory value (post-request 1) | $4,990.30 |
+| Final inventory value (post-request 20) | $7,030.65 |
+| Net inventory change | +$2,040.35 |
+| Cash-increase events (sales fulfilled) | 1 — request 19 (+$419,890.88) |
+| Cash-decrease events (stock reorders triggered) | 10 — requests 2, 6, 7, 9, 11, 13, 15, 16, 18, 20 |
 
 ---
 
@@ -224,8 +224,8 @@ Request 9 (city hall, small, reception — Apr 7) asked for three items that wer
 
 This demonstrates the `check_delivery_timeline` tool surfacing actionable data the customer can use to plan their order.
 
-**3. Large fulfilled orders generate significant cash inflows (Requests 15 and 19)**
-Two requests produced the largest cash increases in `test_results.csv`. Request 15 (event manager, large, demonstration — Apr 12) raised the cash balance by **+$320,000.00**. Request 19 (city hall, medium, exhibition — Apr 15) produced the single largest transaction in the run: cash rose by **+$3,236,430.00**, bringing the final balance to $3,596,731.30. These results confirm that the `fulfill_sale` pipeline correctly handles large multi-item orders — verifying stock, recording the transaction, and updating the balance — in a single agent turn. Request 3 (Apr 4) independently confirms the discount tiered logic: a 10,000-unit A4 order receives 20% off (*"Quote Total: $400.00 (20% discount applied)"*) while a 500-unit printer paper order receives 5% off (*"Quote Total: $23.75 (5% discount applied)"*).
+**3. Large fulfilled orders generate significant cash inflows (Request 19)**
+Request 19 (city hall, medium, exhibition — Apr 15) produced the single net cash increase in the run: the balance rose by **+$419,890.88**, from $42,724.00 to $462,614.88, and reached a final close of **$460,364.88** after end-of-run restocking. The remaining ten cash-change events (requests 2, 6, 7, 9, 11, 13, 15, 16, 18, 20) were all reorder purchases. This distribution confirms that the `fulfill_sale` pipeline correctly handles large multi-item orders — verifying stock, recording the transaction, and updating the balance — in a single agent turn, and that `reorder_supplies` is triggered appropriately after stock depletion events. Request 13 (Apr 8) independently confirms the 5% discount tier: *"Quote: Total of $23.75 for 500 sheets with a 5% discount."*
 
 **4. Partial-fill responses clearly delineate available vs. backordered quantities (Request 12)**
 Request 12 (city hall, small, party — Apr 8) asked for items with mixed availability. The response breaks each line item into available and backordered quantities:

@@ -1,333 +1,273 @@
 request_id,request_date,cash_balance,inventory_value,response
-1,2025-04-01,45037.7,4950.3,"Dear valued customer,
+1,2025-04-01,45009.7,4990.3,"Dear valued customer,
 
-Thank you for your inquiry regarding the paper supplies for your ceremony. Unfortunately, we are unable to fulfill your request for the following items due to lack of stock:
+Thank you for your request for paper supplies for your ceremony. Unfortunately, all the requested items are currently out of stock:
 
-- 200 sheets of A4 glossy paper
-- 100 sheets of heavy cardstock (white)
-- 100 sheets of colored paper (assorted colors)
+1. **Cardstock**: 100 sheets - Currently out of stock (can be placed on backorder)
+2. **A4 Glossy Paper**: 200 sheets - Currently out of stock (can be placed on backorder; estimated delivery: April 5, 2025)
+3. **Colored Paper (Assorted)**: 100 sheets - Currently out of stock (can be placed on backorder; estimated delivery: April 2, 2025)
 
-All these items are currently out of stock, and the expected delivery dates if they were to be reordered are as follows:
-- Glossy paper: expected by 2025-04-08
-- Cardstock: expected by 2025-04-08
-- Colored paper: expected by 2025-04-08
+We recommend placing a backorder for these items. Please let us know how you wish to proceed.
 
-Due to budget constraints, we cannot proceed with placing any backorders at this time.
+Thank you for choosing us!
 
-Thank you for your understanding.
+Sincerely,
+Beaver's Choice Paper Company."
+2,2025-04-03,44994.7,4990.3,"Dear valued customer,
+
+We regret to inform you that both the colorful poster paper and party streamers are currently out of stock and cannot be fulfilled at this time. Unfortunately, we are also unable to reorder these items from different suppliers.
+
+Thank you for your understanding. 
+
+Beaver's Choice Paper Company"
+3,2025-04-04,44994.7,4990.3,"Dear valued customer,
+
+Unfortunately, we are unable to fulfill your order for 10,000 sheets of A4 paper due to insufficient stock. Additionally, alternative options such as cardstock and letter-sized paper are also out of stock. 
+
+We recommend looking into restocking or adjusting your order. If you have any further specifications, please let us know, and we'll be happy to assist you.
+
+Thank you for considering Beaver's Choice Paper Company."
+4,2025-04-05,44994.7,4990.3,"Dear valued customer,
+
+Thank you for your request for paper products for your reception. Here is the summary of your order:
+
+1. **A4 Size Printer Paper**: 250 sheets - Currently out of stock. You can place a backorder for a total cost of **$12.50**.
+
+2. **High-Quality Recycled Cardstock**: 500 sheets - Unfortunately, there is currently no stock available for high-quality recycled cardstock in any form.
+
+As previously mentioned, both items are out of stock and can only be ordered as backorders. Once the items are available, we will notify you regarding the estimated delivery timelines.
+
+Please let us know how you would like to proceed with your order.
 
 Best regards,
+
 Beaver's Choice Paper Company."
-2,2025-04-03,45007.7,4950.3,"Dear valued customer,
+5,2025-04-05,44994.7,4990.3,"Dear valued customer,
 
-Thank you for your order request. Here is your order summary:
+Thank you for your request to place an order for your upcoming party. Unfortunately, the following items you requested are currently out of stock:
 
-1. Large poster paper (24x36 inches):
-   - Quantity: 500 units
-   - Price per unit: $0.95
-   - Total: $475.00
-   - Availability: In stock — ready to ship
+1. **500 sheets of 8.5""x11"" colored paper** - We recommend a backorder for this item, priced at **$47.50**, which includes a **5% discount**. 
+2. **300 sheets of cardstock in various colors** - We can also place a backorder for standard cardstock priced at **$45.00**.
+3. **200 rolls of decorative washi tape** - This item is currently out of stock and cannot be backordered due to delivery being after your required event date of April 15, 2025.
 
-2. Party streamers:
-   - Quantity: 300 units
-   - Price per unit: $0.05
-   - Total: $15.00
-   - Availability: Partially available — remainder on backorder. (on backorder and will be delivered on 2025-04-04)
-
-Unfortunately, the balloons and colorful 220 gsm poster paper are currently out of stock.
-
-We appreciate your understanding and will proceed with your order for the available items. The total for your current order is $490.00.
+Please confirm if you would like to proceed with the backorders for the colored paper and cardstock. If you need alternatives for the washi tape, we can suggest other decorative items.
 
 Best regards,
 Beaver's Choice Paper Company"
-3,2025-04-04,44521.3,5436.7,"Dear valued customer,
+6,2025-04-06,44972.7,5005.3,"Dear valued customer,
 
-Thank you for your order request. Here are the details:
+Unfortunately, we currently have no stock for colorful construction paper and white printer paper. However, we have placed a reorder for 100 units of construction paper and 100 units of cardstock. The estimated delivery for these items is April 7, 2025. 
 
-1. **A4 Paper**:
-   - Price: $400.00 (after a 20% discount) 
-   - availability: in stocksheets in stock and ready for immediate delivery.
-   - Delivery Estimate: Expected by **2025-04-11**.
+Unfortunately, we cannot fulfill your complete order as of now. 
 
-2. **Standard Copy Paper**:
-   - Price: $19.00 (after a 5% discount)
-   - Availability: Currently out of stock, but can be backordered.
-   - Delivery Estimate: Expected by **2025-04-11**.
+Thank you for understanding.
 
-3. **Letter-Sized Paper**:
-   - Price: $240.00 (after a 20% discount) 
-   - Availability: Currently out of stock, but can be backordered.
-   - Delivery Estimate: Expected by **2025-04-11**.
+Sincerely,
+Beaver's Choice Paper Company."
+7,2025-04-07,44892.7,5005.3,"Dear valued customer,
 
-Please confirm if you would like to proceed with this order. If you decide to continue, we will finalize the purchase and ensure delivery by the specified date.
+Thank you for your large order request for various types of paper supplies for your upcoming exhibition. Here are the details of your order:
 
-Thank you for choosing Beaver's Choice Paper Company."
-4,2025-04-05,44521.3,5436.7,"Dear valued customer,
-
-Thank you for your request regarding your order for 500 sheets of high-quality, recycled cardstock in various colors and 250 sheets of A4 size printer paper for your reception. 
-
-Here are the details of your order:
-
-1. **High-Quality, Recycled Cardstock**
+1. **Glossy A4 Paper**:
    - Quantity: 500 sheets
-   - Price: $71.25
-   - Status: Currently out of stock (can be placed on backorder). Expected restock date: April 12, 2025.
+   - Unit Price: $0.1900
+   - Total: $95.00
+   - **Availability**: Currently out of stock (can be backordered)
 
-2. **A4 Size Printer Paper**
-   - Quantity: 250 sheets
-   - Price: $100.00
-   - Status: Currently out of stock (can be placed on backorder). Expected restock date: April 12, 2025.
+2. **Matte A3 Paper**:
+   - Quantity: 1,000 sheets
+   - Unit Price: $0.1620
+   - Total: $162.00
+   - **Availability**: Currently out of stock (can be backordered)
 
-Both items can be placed on backorder and should be available soon after the estimated restock date. If you would like to proceed with this backorder, please let us know.
+3. **Poster Boards (24"" x 36"")**:
+   - Quantity: 300 sheets
+   - Unit Price: $1.0000
+   - Total: $300.00
+   - **Availability**: Currently out of stock (can be backordered)
 
-Thank you for choosing Beaver's Choice Paper Company!"
-5,2025-04-05,44521.3,5436.7,"Dear valued customer,
+4. **Heavyweight Cardstock**:
+   - Quantity: 200 sheets
+   - Unit Price: $0.1500
+   - Total: $30.00
+   - **Availability**: Currently out of stock; reorder placed with an estimated delivery date of 2025-04-11.
 
-We have successfully placed your order for:
-- 500 sheets of 8.5""x11"" colored paper at a total price of $47.50 (In stock)
-- 300 sheets of cardstock at a total price of $45.00 (In stock)
+### Summary:
+- **Total Quote Amount**: $587.00
 
-The 200 rolls of decorative washi tape are currently out of stock and will be placed on backorder, with an expected delivery date of April 19, 2025, at a total price of $40.00.
-
-Your total order cost is $132.50.
-
-Thank you for choosing Beaver's Choice Paper Company for your supplies! If you have any further questions or need assistance, please don't hesitate to ask.
+Please confirm if you would like to proceed with the backorder for the out-of-stock items. They will be shipped once available.
 
 Best regards,
 Beaver's Choice Paper Company"
-6,2025-04-06,44521.3,5436.7,"Dear valued customer,
+8,2025-04-07,44892.7,5005.3,"Dear valued customer,
 
-Thank you for your inquiry regarding the order of supplies for your upcoming assembly. Unfortunately, we currently face stock unavailability issues with the following items:
+Thank you for your request regarding the large order for paper supplies for the upcoming ceremony. Unfortunately, all requested paper items are currently out of stock and cannot be ordered at this time.
 
-1. **Colorful Construction Paper**: Currently out of stock and we cannot place a backorder due to budget constraints.
-2. **White Printer Paper**: Currently out of stock with no available units.
-
-We can offer you:
-- **100 sheets of Bright-Colored Paper**: Available for $12.00
-- **100 sheets of Colored Paper**: Available for $10.00
-
-However, we regret to inform you that we cannot fulfill your complete request at this time. 
-
-Please let us know if you would like to proceed with the available items or if you have any other questions. 
-
-Best Regards,
-Beaver's Choice Paper Company."
-7,2025-04-07,44521.3,5436.7,"Dear valued customer,
-
-Thank you for your interest in placing a large order for various types of paper supplies for your upcoming exhibition. Here’s the status of your requested items:
-
-1. **Glossy A4 Paper**  
-   - Quantity: 500 sheets  
-   - Discount tier: Volume (5% off)  
-   - Final unit price: $0.0475  
-   - Availability: Currently out of stock — can be placed on backorder.  
-
-2. **Matte A3 Paper**  
-   - Quantity: 1000 sheets  
-   - Discount tier: Wholesale (10% off)  
-   - Final unit price: $0.1620  
-   - Availability: Currently out of stock — can be placed on backorder.  
-
-3. **Poster Boards (24"" x 36"")**  
-   - Quantity: 300 units  
-   - Availability: In stock, with 699 units currently available.  
-
-4. **Heavyweight Cardstock**  
-   - Quantity: 200 sheets  
-   - Availability: Currently out of stock — can be placed on backorder.  
-
-Unfortunately, due to availability issues, none of the requested items (Glossy A4 Paper, Matte A3 Paper, Heavyweight Cardstock) can be fulfilled by your desired delivery date of April 15, 2025. We recommend checking back later for restock updates or considering alternative products.
+We sincerely apologize for any inconvenience this may cause. If you would like, we can provide you with alternatives or notify you once the items are back in stock.
 
 Thank you for your understanding.
 
 Best regards,
 Beaver's Choice Paper Company."
-8,2025-04-07,44521.3,5436.7,"Dear valued customer,
+9,2025-04-07,44867.2,5020.3,"Dear valued customer,
 
-Thank you for your order request for the following paper supplies for the upcoming ceremony:
+Thank you for your interest in placing an order for paper supplies for the reception. Unfortunately, the following items are currently out of stock and cannot be fulfilled:
 
-1. **A4 glossy paper**: 500 sheets at $0.1900/unit (total $95.00) - currently out of stock, can be backordered.
-2. **A4 matte paper**: 1,000 sheets at $0.1620/unit - currently out of stock, can be backordered.
-3. **A5 colored paper**: 2,000 sheets at $0.0900/unit (total $180.00) - partially available, remainder on backorder.
-4. **A4 recycled paper**: 3,000 sheets at $0.0720/unit - currently out of stock, can be backordered.
+- 200 sheets of A4 white printer paper
+- 100 sheets of A3 glossy paper
+- 50 packets of 100% recycled kraft paper envelopes
 
-**Overall total including backordered items**: $653.00. Delivery expected by April 15, 2025.
+We do not have an estimated restock date for these items at this moment. If you would like to explore alternative options or products, please let us know.
 
-Please confirm if you'd like to proceed with this order.  
+Beaver's Choice Paper Company."
+13,2025-04-08,44852.2,5035.3,"Dear valued customer,
+
+Thank you for your interest in ordering supplies for your upcoming gathering. Unfortunately, we currently have the following issues with the requested items:
+
+1. **A4 Printing Paper**:
+   - **Availability**: Currently out of stock.
+   - **Quote**: Total of $23.75 for 500 sheets with a 5% discount.
+   - **Action**: This item can be placed on backorder.
+
+2. **Cardstock**:
+   - **Availability**: Not available for ordering. Please consider using an alternative product.
+
+If you would like to proceed with the backorder for the A4 printing paper or discuss alternatives for the cardstock, please let us know.
+
+Thank you for choosing Beaver's Choice Paper Company.
+
+Sincerely,
+Beaver's Choice Paper Company"
+12,2025-04-08,44852.2,5035.3,"Dear valued customer,
+
+Thank you for your order request. Here is the status of the items:
+
+- **Colorful Cardstock**: in stock for immediate delivery at $30.00 each.
+- **Standard Printer Paper**: Unfortunately, we do not have this item in stock.
+- **Paper Napkins**: Currently out of stock, but this can be placed on backorder at $2.00 each.
+
+As the standard printer paper is unavailable, we are unable to complete your order as requested. You may wish to choose an alternative item for your needs. 
+
+Thank you for considering Beaver's Choice Paper Company for your supplies. 
+
+Sincerely,
+Beaver's Choice Paper Company."
+10,2025-04-08,44852.2,5035.3,"Dear valued customer,
+
+Thank you for your request to place an order for 500 sheets of high-quality glossy paper and 300 sheets of sturdy cardstock for our upcoming show.
+
+We can fulfill your order for high-quality glossy paper, as we currently have in stock. However, we regret to inform you that the sturdy cardstock is currently out of stock, and we cannot place a reorder as it is not available in our catalog. 
+
+We recommend checking our catalog for alternative items that may suit your needs.
+
+We appreciate your understanding.
+
+Best regards,
+Beaver's Choice Paper Company."
+11,2025-04-08,44644.2,5135.3,"Dear valued customer,
+
+Thank you for your request to order 500 sheets of A3 glossy paper for your exhibition. I am pleased to confirm that we can fulfill your order. The total cost for the A3 glossy paper is $95.00, which includes a 5% volume discount bringing the final unit price to $0.1900. This item is currently in stock and will be ready to ship by April 15, 2025.
+
+However, please note that the A4 matte paper is not in our product catalog and cannot be reordered. 
+
+If you need further assistance or would like to adjust your order, please feel free to reach out.
+
+Best regards,
+Beaver's Choice Paper Company."
+14,2025-04-09,44644.2,5135.3,"Dear valued customer,
+
+Thank you for your request regarding a large order for high-quality paper supplies for your upcoming performance. Here are the details of your order:
+
+1. **A4 Paper**  
+   - Quantity: 5,000 sheets  
+   - Price per sheet: $0.0400  
+   - Total: $200.00  
+   - Availability: Currently out of stock — can be placed on backorder.
+
+2. **Cardstock**  
+   - Quantity: 500 sheets  
+   - Price per sheet: $0.1425 (after 5% discount)  
+   - Total: $71.25  
+   - Availability: Partially available — remainder on backorder.
+
+3. **Poster Paper**  
+   - Quantity: 2,000 sheets  
+   - Price per sheet: $0.2250 (after 10% discount)  
+   - Total: $450.00  
+   - Availability: Currently out of stock — can be placed on backorder.
+
+Please be informed that the A4 paper and poster paper are currently out of stock, but they can be placed on backorder. The cardstock is partially available, and its remainder will also be placed on backorder.
+
+The estimated restock date for the A4 paper and poster paper will be available soon. We will keep you updated.
+
+Thank you for your understanding, and we appreciate your business.
+
+Best regards,  
+Beaver's Choice Paper Company."
+15,2025-04-12,42951.0,6678.499999999999,"Unfortunately, the requested items are currently out of stock and not available for order at this time. Please consider alternative products or check back later."
+16,2025-04-13,42914.0,6683.499999999999,"Dear valued customer,
+
+Your order for 500 sheets of A4 printer paper, 200 sheets of colorful construction paper, and 100 sheets of poster board has been successfully placed. The total cost is $62.75, with all items currently in stock and ready to ship.
+
+Thank you for choosing us.
+
+Best regards,
+Beaver's Choice Paper Company."
+17,2025-04-14,42914.0,6683.499999999999,"Dear valued customer,
+
+We regret to inform you that we cannot fulfill your order at this time. The order for 1000 sheets of A4 white printer paper cannot be completed due to insufficient stock. The delivery estimate for the requested paper is expected by May 16, 2025.
+
+Additionally, the following items from your order are also out of stock:
+- Table Napkins: Currently out of stock; estimated restock date is yet to be confirmed.
+- Paper Cups and Paper Plates are also on backorder with expected delivery times to be confirmed.
+
+We apologize for any inconvenience this may cause. Please let us know if you would like to make adjustments to your order or if you are interested in alternative products.
+
+Thank you for your understanding.
+
+Best regards,
+Beaver's Choice Paper Company."
+18,2025-04-14,42724.0,6683.499999999999,"Dear valued customer,\n\nThank you for your order regarding the upcoming ceremony. The following items have been successfully quoted and ordered:\n\n1. **Colored paper (200 sheets)** - Price: $20.00 (in stock, delivery by April 15, 2025)\n2. **Standard copy paper (1000 sheets)** - Price: $40.00 (ordered, estimated delivery on 2025-04-18)\n3. **250 gsm cardstock (500 sheets)** - Price: $150.00 (ordered, estimated delivery on 2025-04-18)\n\nThe total amount for your order is $210.00. Thank you for choosing Beaver's Choice Paper Company!"
+19,2025-04-15,462614.88,7030.649999999999,"Dear valued customer,
+
+Thank you for your order request for our upcoming exhibition. Here is the quotation:
+
+1. **A4 Glossy Paper** (2000 sheets)
+   - Final unit price: $0.1800 
+   - Total: $360.00 
+   - **Availability**: Partially available (1000 sheets available, remainder on backorder)
+   - **Backorder Details**: 1000 units will be restocked at $0.2000/unit, total $400.00, estimated delivery: April 22, 2025.
+
+2. **A3 Matte Paper** (1500 sheets)
+   - Final unit price: $0.1620 
+   - Total: $243.00 
+   - **Availability**: Partially available (750 sheets available, remainder on backorder)
+   - **Backorder Details**: 750 units will be restocked at $0.1800/unit, total $270.00, estimated delivery: April 22, 2025.
+
+3. **Cardstock** (1000 sheets)
+   - Final unit price: $0.1350 
+   - Total: $135.00 
+   - **Availability**: Partially available (500 sheets available, remainder on backorder)
+   - **Backorder Details**: 500 units will be restocked at $0.1500/unit, total $150.00, estimated delivery: April 19, 2025.
+
+**Total for available items:** $738.00 
+
+Please let us know if you would like to proceed with this order or if you have any other questions.
+
+Thank you!  
+Beaver's Choice Paper Company."
+20,2025-04-17,460364.88,7030.649999999999,"Dear valued customer,
+
+Thank you for your recent order request for paper supplies for your upcoming concert. We are pleased to provide you with a summary of the order and the current stock status:
+
+- **Flyers**: You requested 5,000 flyers. The quote for this item is $600.00 after a 20% bulk discount, resulting in a unit price of $0.12. We currently have this item in stock, and it is ready to ship to ensure delivery by May 15, 2025.
+- **Posters**: Unfortunately, posters are currently not available in our catalog and cannot be ordered at this time.
+- **Tickets**: Similar to the posters, tickets are also not available in our catalog.
+
+Currently, we can fulfill the order for the 5,000 flyers at the quoted price. We apologize for any inconvenience caused by the unavailability of the other requested items.
+
+Please confirm if you would like to proceed with the order for the flyers. 
 
 Thank you!
 
 Beaver's Choice Paper Company."
-9,2025-04-07,44521.3,5436.7,"Dear valued customer,
-
-We unfortunately cannot confirm your order for the following items due to stock issues:
-
-1. **200 sheets of A4 white printer paper** - Currently out of stock but can be backordered. Estimated total cost: $10.00.
-2. **100 sheets of A3 glossy paper** - Currently out of stock but can be backordered. Estimated total cost: $20.00.
-3. **50 packets of 100% recycled kraft paper envelopes** - Not available, but we have kraft paper available at $0.10 per unit, for a total of $5.00. However, it is also currently out of stock and can be backordered.
-
-We can place a backorder for all items mentioned above. Once available, we will process your order for these items, and they will be delivered by April 10, 2025.
-
-Thank you for your understanding.
-
-Beaver's Choice Paper Company."
-13,2025-04-08,44521.3,5436.7,"Dear valued customer,
-
-Thank you for your order of 500 sheets of A4 printing paper and 200 sheets of cardstock for your upcoming gathering. Unfortunately, both items are currently out of stock and were not found in the product catalog for reordering attempts. 
-
-However, we have confirmed your order and the total cost is $53.75. The delivery date is set for April 10, 2025.
-
-Thank you for choosing Beaver's Choice Paper Company."
-12,2025-04-08,44521.3,5436.7,"Dear valued customer,
-
-Thank you for your order request. Here are the details regarding your items:
-
-1. **Colorful Cardstock**: 200 sheets on backorder for a total cost of **$30.00**.
-2. **Paper Napkins**: 100 napkins on backorder for a total cost of **$2.00**.
-3. **Standard Printer Paper**: 500 sheets cannot be fulfilled as it is currently out of stock and is on backorder with no available delivery date.
-
-We aim to deliver the cardstock and napkins by **April 15, 2025**. However, the standard printer paper will not be available in time for your party.
-
-Thank you for choosing Beaver's Choice Paper Company."
-10,2025-04-08,44376.3,5581.7,"Dear valued customer,
-
-Thank you for your order request for 500 sheets of high-quality glossy paper and 300 sheets of sturdy cardstock for your upcoming show. 
-
-We are pleased to confirm the availability of your order:
-- **500 units of Glossy Paper** at a total cost of **$100.00**. This will be delivered by **April 12, 2025**.
-- Unfortunately, **300 sheets of cardstock** could not be found in stock. We recommend considering an alternative, such as 100 lb cover stock, which we can provide at **$237.50**. 
-
-Please confirm if you would like to proceed with the purchase of the glossy paper and the 100 lb cover stock.
-
-Best regards,
-Beaver's Choice Paper Company."
-11,2025-04-08,44376.3,5581.7,"Dear valued customer,
-
-Thank you for your request regarding your order. Here are the details:
-
-- **A3 Glossy Paper**: 500 sheets at a total cost of **$95.00**. This order is confirmed and will be ready to ship by **April 15, 2025**.
-
-- **A4 Matte Paper**: Unfortunately, the 300 sheets you requested is currently **out of stock** and can only be placed on backorder. We recommend considering alternatives, such as **300 sheets of Matte paper for $54.00**, which is also out of stock and available for backorder.
-
-Please let us know if you would like to proceed with the backorder for the A4 Matte paper or if you have any other questions.
-
-Best regards,
-Beaver's Choice Paper Company"
-14,2025-04-09,43551.3,5906.7,"Dear valued customer,
-
-We regret to inform you that we currently have insufficient stock to fulfill your entire order. Below are the details of the items that can be supplied:
-
-- 500 sheets of Cardstock at $0.1500/unit totaling $75.00. Estimated delivery on April 13, 2025.
-- 2000 sheets of Poster paper at $0.2500/unit totaling $500.00. Estimated delivery on April 16, 2025.
-
-Unfortunately, we are out of stock for A4 paper, and we do not have an estimated restock date at this moment.
-
-If you would like to proceed with this partial order or make any adjustments, please let us know.
-
-Thank you for your understanding.
-
-Best regards,
-Beaver's Choice Paper Company."
-15,2025-04-12,363551.3,5406.7,"Dear valued customer,
-
-Thank you for your order request for your upcoming demonstration. Below are the details regarding the supplies:
-
-1. **A3 Colored Paper** (5,000 sheets)
-   - **Final price**: $0.0800 each 
-   - **Total**: $400.00 
-   - **Availability**: Currently out of stock and can be placed on backorder. Expected delivery: 2025-04-19.
-
-2. **A4 White Paper** (10,000 sheets)
-   - **Final price**: $0.0400 each 
-   - **Total**: $400.00 
-   - **Availability**: Currently out of stock and can be placed on backorder. Expected delivery: 2025-04-19.
-
-3. **Cardboard** (500 reams)
-   - **Final price**: $0.0950 each 
-   - **Total**: $47.50 
-   - **Availability**: Currently out of stock and can be placed on backorder. Expected delivery: 2025-04-19.
-
-Total Order Cost: $847.50 (All items are currently out of stock and will need to be backordered.)
-
-Best regards,
-Beaver's Choice Paper Company."
-16,2025-04-13,363551.3,5406.7,"Dear valued customer,
-
-Thank you for your order request. Unfortunately, both the A4 printer paper and poster paper are currently out of stock, which means that I cannot place the order for 500 sheets of A4 printer paper at $23.75 and 100 sheets of poster paper at $25.00, to be delivered by April 15, 2025.
-
-Additionally, the colorful construction paper is also out of stock and can be placed on backorder. For the construction paper, the backorder timeline can vary, and I recommend contacting the supplier directly for an estimated availability.
-
-I apologize for any inconvenience this may cause. Please check back later or consider alternative suppliers or different products. If you need assistance with anything else, please let me know!
-
-Best regards,
-Beaver's Choice Paper Company."
-17,2025-04-14,363551.3,5406.7,"Dear valued customer,
-
-Thank you for your order request for the upcoming reception. Here is the quote for your requested paper supplies:
-
-1. **A4 White Printer Paper**: 1,000 units currently out of stock. Estimated restock date: currently unavailable — please contact us for an update.
-2. **A3 Colored Paper (Assorted Colors)**: 500 units currently out of stock. Estimated restock date: currently unavailable — please contact us for an update.
-3. **Table Napkins (White)**: 2,000 units currently out of stock. Estimated restock date: currently unavailable — please contact us for an update.
-4. **Biodegradable Paper Cups**: 1,000 units currently out of stock. Estimated restock date: currently unavailable — please contact us for an update.
-5. **Biodegradable Paper Plates**: in stock. Total: $47.50.
-
-Unfortunately, we currently have several items out of stock and will require confirmation of whether you'd like to proceed with the available items or make adjustments to your order.
-
-Beaver's Choice Paper Company."
-18,2025-04-14,363551.3,5406.7,"Dear valued customer,
-
-Thank you for your order request for the upcoming ceremony. Here is a summary of the quote for your paper supplies:
-
-1. **High-quality white cardstock (500 sheets)**:
-   - **Standard Price**: $75.00
-   - **Discount**: 5% off (Volume discount)
-   - **Discounted Price**: $71.25
-   - **Status**: In stock
-
-2. **Standard printing paper (1000 sheets)**:
-   - **Price**: $90.00
-   - **Discount**: 10% off (Wholesale pricing)
-   - **Status**: Backorder, estimated delivery 2025-05-10
-
-3. **Colored paper (200 sheets in assorted colors)**:
-   - **Price**: $24.00 (standard pricing)
-   - **Status**: Backorder, estimated delivery 2025-05-10
-
-**Total Quote**: $185.25
-
-Please note that the colored paper and standard printing paper are currently on backorder, with an estimated restock date of May 10, 2025. 
-
-If you would like to proceed with the order or if you have any further questions, feel free to reach out.
-
-Beaver's Choice Paper Company."
-19,2025-04-15,3599981.3,5361.7,"Dear valued customer,
-
-Thank you for your request to place an order for paper supplies for the upcoming exhibition. Here is the quote for the requested items:
-
-1. **Glossy Paper**: 2000 units at $0.1800/unit -> Total: $360.00 (Currently out of stock — can be placed on backorder, expected delivery by 2025-04-22)
-2. **Cardstock**: 1000 units at $0.1350/unit -> Total: $135.00 (Currently out of stock — can be placed on backorder, expected delivery by 2025-04-19)
-3. **Matte Paper**: 1500 units at $0.1620/unit -> Total: $243.00 (Currently out of stock — can be placed on backorder, expected delivery by 2025-04-22)
-
-**Grand Total**: $738.00
-
-Please confirm if you would like to proceed with this order on backorder. We appreciate your understanding and look forward to serving you.
-
-Best regards,
-Beaver's Choice Paper Company"
-20,2025-04-17,3596731.3,7361.7,"Dear valued customer,
-
-We have successfully processed your order for concert supplies. Here is the summary:
-
-1. Flyers:
-   - Quantity: 5,000 units
-   - Unit Price: $0.1200
-   - Total Price: $600.00
-   - Availability: In stock — ready to ship
-
-Unfortunately, we are unable to fulfill your requests for the following items due to lack of availability:
-- Large Posters: Not found in catalog, pricing not available.
-- Tickets: Not found in catalog, pricing not available.
-
-We recommend considering alternative options for both large posters and tickets. If you would like us to suggest alternatives or if you have any other needs, please let us know.
-
-Thank you for choosing Beaver's Choice Paper Company."
