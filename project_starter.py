@@ -688,10 +688,7 @@ def reorder_supplies(item_name: str, quantity: int, request_date: str) -> str:
     total_cost = unit_price * quantity
     cash = get_cash_balance(request_date)
     if cash < total_cost:
-        return (
-            f"Insufficient funds. Reorder cost: ${total_cost:.2f}, "
-            f"but only ${cash:.2f} available."
-        )
+        return f"Cannot reorder '{item_name}' at this time — budget unavailable for this reorder."
 
     delivery_date = get_supplier_delivery_date(request_date, quantity)
     create_transaction(item_name, "stock_orders", quantity, total_cost, request_date)
@@ -840,12 +837,11 @@ def generate_customer_quote(item_name: str, quantity: int, request_date: str) ->
     stock_info = get_stock_level(item_name, request_date)
     current_stock = int(stock_info["current_stock"].iloc[0])
     if current_stock >= quantity:
-        availability = f"In stock ({current_stock} available)"
+        availability = "In stock — ready to ship"
+    elif current_stock > 0:
+        availability = "Partially available — remainder on backorder"
     else:
-        availability = (
-            f"Partial stock ({current_stock} available; "
-            f"{quantity - current_stock} on backorder)"
-        )
+        availability = "Currently out of stock — can be placed on backorder"
 
     return (
         f"Quote ({request_date}):\n"
@@ -904,14 +900,12 @@ def fulfill_sale(
         )
     total_price = unit_price * quantity
     transaction_id = create_transaction(item_name, "sales", quantity, total_price, sale_date)
-    remaining = current_stock - quantity
     return (
         f"Sale confirmed (Transaction #{transaction_id}):\n"
-        f"  Item:            {item_name}\n"
-        f"  Quantity sold:   {quantity:,} units\n"
-        f"  Unit price:      ${unit_price:.4f}\n"
-        f"  Revenue:         ${total_price:,.2f}\n"
-        f"  Remaining stock: {remaining:,} units"
+        f"  Item:       {item_name}\n"
+        f"  Quantity:   {quantity:,} units\n"
+        f"  Unit price: ${unit_price:.4f}\n"
+        f"  Total:      ${total_price:,.2f}\n"
     )
 
 
@@ -1013,6 +1007,102 @@ def _sanitize_response(response: str, request_date: str) -> str:
         rf"\b(?:{_MONTH_PAT})\s+\d{{1,2}},?\s+\d{{4}}\b",
         _fix_written,
         response,
+    )
+
+    # --- Issue 3: strip exact warehouse stock counts ---
+    # Parenthetical forms: "(272 available)" or "(272 available; 9728 on backorder)"
+    response = re.sub(
+        r"\(\s*\d[\d,]*\s*(?:units?\s+)?available(?:[;,]\s*\d[\d,]*\s*(?:units?\s+)?on\s+backorder)?\s*\)",
+        "",
+        response,
+        flags=re.IGNORECASE,
+    )
+    # Inline "X available; Y on backorder" or "X available, Y on backorder"
+    response = re.sub(
+        r"\b\d[\d,]*\s*(?:units?\s+)?available[;,]\s*\d[\d,]*\s*(?:units?\s+)?on\s+backorder\b",
+        "partially available — some units on backorder",
+        response,
+        flags=re.IGNORECASE,
+    )
+    # Standalone "X units on backorder" or "X on backorder"
+    response = re.sub(
+        r"\b\d[\d,]*\s*(?:units?\s+)?(?:are\s+)?on\s+backorder\b",
+        "on backorder",
+        response,
+        flags=re.IGNORECASE,
+    )
+    # Standalone "X units available" or "X available"
+    response = re.sub(
+        r"\b\d[\d,]*\s*(?:units?\s+)?(?:are\s+)?available\b",
+        "in stock",
+        response,
+        flags=re.IGNORECASE,
+    )
+    # "X units in stock" or "X units are in stock"
+    response = re.sub(
+        r"\b\d[\d,]*\s*(?:units?\s+)?(?:are\s+)?in\s+stock\b",
+        "in stock",
+        response,
+        flags=re.IGNORECASE,
+    )
+    # "Remaining stock: X units" from fulfill_sale (safety net)
+    response = re.sub(
+        r"Remaining stock:\s*\d[\d,]*\s*(?:units?)?\b",
+        "",
+        response,
+        flags=re.IGNORECASE,
+    )
+    # "Current availability: 0 units" or "availability: X units" patterns
+    response = re.sub(
+        r"\b(?:current\s+)?availability:\s*0\s*(?:units?)?\b",
+        "availability: currently unavailable",
+        response,
+        flags=re.IGNORECASE,
+    )
+    response = re.sub(
+        r"\b(?:current\s+)?availability:\s*\d[\d,]+\s*(?:units?)?\b",
+        "availability: in stock",
+        response,
+        flags=re.IGNORECASE,
+    )
+    # Clean up any residual "Partial stock:" prefix left after count removal
+    response = re.sub(
+        r"\bPartial stock:\s*(?=partially available|on backorder|in stock)",
+        "",
+        response,
+        flags=re.IGNORECASE,
+    )
+
+    # --- Issue 4: internal financial constraint language ---
+    # "we do not have enough funds / insufficient funds / not enough funds"
+    for _funds_pat in (
+        r"[Ww]e\s+do\s+not\s+have\s+enough\s+funds?[^.]*\.",
+        r"[Ii]nsufficient\s+funds?[^.]*\.",
+        r"[Nn]ot\s+enough\s+funds?[^.]*\.",
+        r"[Bb]udget\s+unavailable[^.]*\.",
+        r"[Cc]annot\s+reorder\s+'?[^']+'?\s+at\s+this\s+time[^.]*\.",
+    ):
+        response = re.sub(
+            _funds_pat,
+            "This item is currently unavailable for reorder.",
+            response,
+            flags=re.IGNORECASE,
+        )
+
+    # --- Issue 5: internal inventory counts in narrative text ---
+    # "Current inventory is 100 units" / "inventory is X units"
+    response = re.sub(
+        r"\b[Cc]urrent\s+inventory\s+is\s+\d[\d,]*\s+units?[^.]*\.",
+        "",
+        response,
+        flags=re.IGNORECASE,
+    )
+    # "a reorder of X units has been placed" — strip the count, keep the fact
+    response = re.sub(
+        r"(\ba\s+reorder\s+of\s+)\d[\d,]*\s+units?",
+        r"\1stock",
+        response,
+        flags=re.IGNORECASE,
     )
 
     return response
